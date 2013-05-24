@@ -1,0 +1,83 @@
+".navbar": {
+	width : Ti.UI.FILL,
+	height : Ti.UI.SIZE,
+	top : 0,
+	zIndex : 10
+},
+".back": {
+	width : 1024,
+	height : 44,
+	top : 0,
+	left : 0,
+	image : '/navbar/back.png'
+},
+".shadow": {
+	width : 1024,
+	height : 4,
+	top : 44,
+	image : '/navbar/shadow.png'
+},
+".home": {
+	width : 64,
+	height : 44,
+	top : 0,
+	left : 0,
+	backgroundImage : '/navbar/home.png',
+	backgroundSelectedImage : '/navbar/home_tap.png',
+	backgroundBaseImage : '/navbar/home.png'
+},
+".explore": {
+	width : 63,
+	height : 44,
+	top : 0,
+	left : 64,
+	backgroundImage : '/navbar/explore.png',
+	backgroundSelectedImage : '/navbar/explore_tap.png',
+	backgroundBaseImage : '/navbar/explore.png'
+},
+".profile": {
+	width : 63,
+	height : 44,
+	top : 0,
+	left : 127,
+	backgroundImage : '/navbar/profile.png',
+	backgroundSelectedImage : '/navbar/profile_tap.png',
+	backgroundBaseImage : '/navbar/profile.png'
+},
+".share": {
+	width : 64,
+	height : 44,
+	top : 0,
+	left : 190,
+	backgroundImage : '/navbar/share.png',
+	backgroundSelectedImage : '/navbar/share_tap.png',
+	backgroundBaseImage : '/navbar/share.png'
+},
+".prev": {
+	width : 38,
+	height : 44,
+	top : 0,
+	right : 50,
+	backgroundImage : '/navbar/prev.png'
+},
+".next": {
+	width : 38,
+	height : 44,
+	top : 0,
+	right : 12,
+	backgroundImage : '/navbar/next.png'
+},
+".title": {
+    touchEnabled : false,
+    width : 416,
+    height : 44,
+    top : 0,
+    left : 266,
+    color : '#ffffff',
+    font : {
+        fontFamily : Alloy.CFG.ui_font,
+        fontSize : 16,
+        fontWeight : 'bold'
+    },
+    textAlign : 'left'
+}

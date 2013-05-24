@@ -1,0 +1,19 @@
+{
+	"global": {
+		"nx_endpoint": "http://insta.nexum.ws/v1/",
+		"nx_timeout": 10000,
+		"ig_endpoint": "https://api.instagram.com/v1/",
+		"ig_timeout": 10000,
+		"ig_client_id": "8c8f279095cb4c4a8c384e1cef007a3b",
+		"ig_callback": "http://login.nexum.ws/instagram/",
+		"ig_logout": "https://instagram.com/accounts/logout",
+		"ui_color": "#306088",
+		"ui_font": "Helvetica Neue"
+	},
+	"env:development": {},
+	"env:test": {},
+	"env:production": {},
+	"os:ios": {},
+	"os:android": {},
+	"dependencies": {}
+}

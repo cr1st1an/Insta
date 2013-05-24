@@ -1,0 +1,134 @@
+".login": {
+	width : Ti.UI.FILL,
+	height : Ti.UI.FILL,
+	zIndex : 15
+},
+".back": {
+	touchEnabled : false,
+	width : 1024,
+	height : 1024,
+	image : '/login/back.jpg'
+},
+".form": {
+	width : Ti.UI.SIZE,
+	height : Ti.UI.SIZE,
+	layout : 'vertical'
+},
+".logo": {
+	touchEnabled : false,
+	width : 128,
+	height : 180,
+	top : 0,
+	image : '/login/logo.png'
+},
+".start": {
+	width : 256,
+	height : 70,
+	top : 70,
+	backgroundImage : '/login/start.png',
+	backgroundSelectedImage : '/login/start_tap.png'
+},
+".instagram": {
+	backgroundColor : 'transparent',
+	width : Ti.UI.FILL,
+	height : Ti.UI.FILL
+},
+".cancel": {
+	width : 92,
+	height : 41,
+	bottom : 35,
+	backgroundImage : '/login/cancel.png',
+	backgroundSelectedImage : '/login/cancel_tap.png'
+},
+".title": {
+	touchEnabled : false,
+	width : 406,
+	height : 40,
+	image : '/login/title.png'
+},
+".field": {
+	width : 362,
+	height : 70,
+	top : 6,
+	layout : 'horizontal'
+},
+".top": {
+	top : 32
+},
+".backCancel": {
+	width : 326,
+	height : 70,
+	left : 0,
+	backgroundImage : '/login/back_cancel.png'
+},
+".backActive": {
+	width : 259,
+	height : 70,
+	left : 0,
+	backgroundImage : '/login/back_active.png'
+},
+".backInactive": {
+	width : 326,
+	height : 70,
+	left : 0,
+	backgroundImage : '/login/back_inactive.png'
+},
+".check": {
+	width : 36,
+	height : 70,
+	left : 0,
+	backgroundImage : '/login/check.png'
+},
+".go": {
+	width : 67,
+	height : 70,
+	left : 0,
+	backgroundImage : '/login/go.png',
+	backgroundSelectedImage : '/login/go_tap.png'
+},
+".undo": {
+	width : 67,
+	height : 70,
+	right : 0
+},
+".profilePicture": {
+    touchEnabled : false,
+	width : 32,
+	height : 32,
+	top : 18,
+	left : 19,
+	borderRadius : 3
+},
+".username": {
+    touchEnabled : false,
+    width : 204,
+    height : 64,
+    left : 61,
+    color : '#666666',
+    font : {
+        fontFamily : Alloy.CFG.ui_font,
+        fontSize : 16
+    }
+},
+".email": {
+    touchEnabled : false,
+    width : 204,
+    height : 64,
+    left : 28,
+    color : '#666666',
+    font : {
+        fontFamily : Alloy.CFG.ui_font,
+        fontSize : 16
+    }
+},
+".input": {
+    autocapitalization : Ti.UI.TEXT_AUTOCAPITALIZATION_NONE,
+    width : 204,
+    height : 64,
+    left : 28,
+    color : '#113452',
+    font : {
+        fontFamily : Alloy.CFG.ui_font,
+        fontSize : 16
+    }
+}

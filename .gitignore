@@ -1,3 +1,9 @@
-# Build folder and log file
-build/
 build.log
+build
+npm-debug.log
+tmp
+.map
+.DS_Store
+.project
+.settings
+Resources

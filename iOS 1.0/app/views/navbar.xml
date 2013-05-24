@@ -1,0 +1,13 @@
+<Alloy>
+	<View class="navbar">
+		<ImageView class="back" />
+		<ImageView class="shadow" />
+		<Button id="home" class="home" onSingletap="homeTap" />
+		<Button id="explore" class="explore" onSingletap="exploreTap" />
+		<Button id="profile" class="profile" onSingletap="profileTap" />
+		<Button id="share" class="share" />
+		<Label id="title" class="title" />
+		<Button class="prev" onSingletap="prevTap" />
+		<Button class="next" />
+	</View>
+</Alloy>

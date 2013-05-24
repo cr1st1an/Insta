@@ -1,0 +1,6 @@
+".main": {
+	scrollsToTop : false,
+	height : Ti.UI.FILL,
+	width : Ti.UI.FILL,
+	zIndex : 0
+}

@@ -1,0 +1,14 @@
+".thumb_b":{
+    touchEnabled : false,
+	width : 252,
+	height : 252,
+	top : 0,
+	left : 0
+},
+".photo":{
+    touchEnabled : false,
+	width : 240,
+	height : 240,
+	top : 12,
+	left : 12
+}

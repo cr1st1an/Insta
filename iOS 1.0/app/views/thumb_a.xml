@@ -1,0 +1,9 @@
+<Alloy>
+    <View class="thumb_a">
+    	<ImageView id="photo" class="photo" />
+    	<ImageView id="profile_picture" class="profile_picture" />
+    	<Label id="username" class="username" />
+    	<Label id="time" class="time" />
+    	<ImageView id="heart" class="heart">
+    </View>
+</Alloy>

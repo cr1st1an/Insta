@@ -1,0 +1,56 @@
+<Alloy>
+	<View class="login">
+		<ImageView class="back" />
+		<View id="start" class="form">
+			<ImageView class="logo" />
+			<Button class="start" onSingletap="startTap" />
+		</View>
+		<WebView id="instagram" class="instagram">
+			<Button class="cancel" onSingletap="cancelTap" />
+		</WebView>
+		<View id="email" class="form">
+			<ImageView class="title" />
+			<View class="field top">
+				<View class="backCancel">
+					<ImageView id="profilePictureEmail" class="profilePicture" />
+					<Label id="usernameEmail" class="username" />
+					<View class="undo" onSingletap="undoUserTap" />
+				</View>
+				<View class="check" />
+			</View>
+			<View class="field">
+				<View onSingletap="backEmailTap" class="backActive">
+					<TextField id="emailInput" class="input" onFocus="inputFocus" onBlur="inputBlur" onChange="inputChange" onReturn="returnEmail" />
+				</View>
+				<Button id="emailGo" class="go" onSingletap="returnEmail" />
+			</View>
+			<View class="field">
+				<View class="backInactive" />
+			</View>
+		</View>
+		<View id="invite" class="form">
+			<ImageView class="title" />
+			<View class="field top">
+				<View class="backCancel">
+					<ImageView id="profilePictureInvite" class="profilePicture" />
+					<Label id="usernameInvite" class="username" />
+					<View class="undo" onSingletap="undoUserTap" />
+				</View>
+				<View class="check" />
+			</View>
+			<View class="field">
+				<View class="backCancel">
+					<Label id="emailInvite" class="email" />
+					<View class="undo" onSingletap="undoEmailTap" />
+				</View>
+				<View class="check" />
+			</View>
+			<View class="field">
+				<View onSingletap="backInviteTap" class="backActive">
+					<TextField id="inviteInput" class="input" onFocus="inputFocus" onBlur="inputBlur" onChange="inputChange" onReturn="returnInvite" />
+				</View>
+				<Button id="inviteGo" class="go" onSingletap="returnInvite" />
+			</View>
+		</View>
+	</View>
+</Alloy>

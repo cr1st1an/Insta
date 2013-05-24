@@ -1,0 +1,14 @@
+".header_profile":{
+	width : Ti.UI.FILL,
+	height : 154,
+	top : 44,
+	left : 0
+},
+".details":{
+	width : Ti.UI.FILL,
+	height : 66,
+	bottom : 0,
+	left : 0,
+	backgroundImage : '/headers/back_details.png',
+	backgroundRepeat : true
+}
