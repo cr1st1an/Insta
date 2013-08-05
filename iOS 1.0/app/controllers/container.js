@@ -1,8 +1,10 @@
 var buffers = [];
 var current_buffer = 0;
 var buffer_index;
+var item_count = 0;
 var thumbs = [];
 var thumbLayout = null;
+var open = true;
 
 newBuffer();
 
@@ -10,69 +12,50 @@ $.container.setThumbLayout = function(thumbLayoutParam) {
 	$.container.thumbLayout = thumbLayoutParam;
 }
 
+$.container.getThumbHeight = function() {
+	var temp_height = 0;
+	var temp_thumb = Alloy.createController($.container.thumbLayout).getView();
+	temp_height = temp_thumb.height;
+	temp_thumb = null;
+	return temp_height;
+}
+
 $.container.appendData = function(dataParam, endParam) {
+	if (open) {
+		for (var i in dataParam) {
+			thumbs[i] = Alloy.createController($.container.thumbLayout).getView();
+			thumbs[i].updateData(dataParam[i]);
+			buffers[current_buffer].add(thumbs[i]);
+			buffers[current_buffer].items++;
 
-	for (var i in dataParam) {
-		thumbs[i] = Alloy.createController($.container.thumbLayout).getView();
-		dataParam[i]['time_ago'] = timeAgo(dataParam[i]['created_time']);
-		thumbs[i].updateData(dataParam[i]);
-		buffers[current_buffer].add(thumbs[i]);
-		buffers[current_buffer].items++;
+			buffer_index++;
+			item_count++;
 
-		buffer_index++;
-
-		if (12 === buffer_index) {
-			$.container.add(buffers[current_buffer++]);
-			newBuffer();
+			if (12 === buffer_index) {
+				$.container.add(buffers[current_buffer++]);
+				newBuffer();
+			}
 		}
-	}
 
-	if (endParam) {
-		$.container.add(buffers[current_buffer]);
+		if (endParam) {
+			open = false;
+			$.container.add(buffers[current_buffer++]);
+		}
+
+		$.container.fireEvent('orientationChange');
 	}
-	
-	$.container.fireEvent('orientationChange');
 };
 
 function newBuffer() {
 	buffers[current_buffer] = Ti.UI.createView({
 		width : Ti.Platform.displayCaps.platformWidth,
-		top : -1232,
+		top : 0,
 		height : 1232,
 		layout : 'horizontal',
 		items : 0
 	});
 	buffer_index = 0;
 };
-
-function timeAgo(createdTimeParam) {
-	var date= new Date(parseInt(createdTimeParam) * 1000);
-	
-    var seconds = Math.floor((new Date() - date) / 1000);
-
-    var interval = Math.floor(seconds / 31536000);
-
-    if (interval >= 1) {
-        return interval + "y ago";
-    }
-    interval = Math.floor(seconds / 2592000);
-    if (interval >= 1) {
-        return interval + " mo ago";
-    }
-    interval = Math.floor(seconds / 86400);
-    if (interval >= 1) {
-        return interval + "d ago";
-    }
-    interval = Math.floor(seconds / 3600);
-    if (interval >= 1) {
-        return interval + "h ago";
-    }
-    interval = Math.floor(seconds / 60);
-    if (interval >= 1) {
-        return interval + "m ago";
-    }
-    return Math.floor(seconds) + "s ago";
-}
 
 $.container.addEventListener('orientationChange', function(e) {
 	if (undefined !== thumbs[0]) {
@@ -82,11 +65,27 @@ $.container.addEventListener('orientationChange', function(e) {
 		} else {
 			columns = 4;
 		}
-		
+
+		if (Ti.Platform.displayCaps.platformWidth !== $.container.width)
+			$.container.width = Ti.Platform.displayCaps.platformWidth;
+		if ((Math.ceil(item_count / columns) * thumbs[0].height) !== $.container.height)
+			$.container.height = (Math.ceil(item_count / columns) * thumbs[0].height);
+
 		for (var i in buffers) {
-			buffers[i].top = (((12 / columns) * thumbs[0].height) * i);
-			buffers[i].width = Ti.Platform.displayCaps.platformWidth;
-			buffers[i].height = (Math.ceil(buffers[i].items / columns) * thumbs[0].height);
+			if (Ti.Platform.displayCaps.platformWidth !== buffers[i].width)
+				buffers[i].width = Ti.Platform.displayCaps.platformWidth;
+			if ((Math.ceil(buffers[i].items / columns) * thumbs[0].height) !== buffers[i].height)
+				buffers[i].height = (Math.ceil(buffers[i].items / columns) * thumbs[0].height);
 		}
+	}
+
+});
+
+$.container.addEventListener('click', function(e) {
+	if (undefined !== e.source.id) {
+		Ti.App.fireEvent('ui', {
+			action : 'slideshow_open_slideshow',
+			id : e.source.id
+		});
 	}
 });

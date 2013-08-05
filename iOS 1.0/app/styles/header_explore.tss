@@ -1,0 +1,33 @@
+".header_explore":{
+	width : Ti.UI.SIZE,
+	height : Ti.UI.SIZE,
+	layout : 'horizontal'
+},
+".menu":{
+	width : Ti.UI.FILL,
+	height : 66,
+	top : 0,
+	left : 0,
+	backgroundImage : '/headers/back_details.png',
+	backgroundRepeat : true
+},
+".tab": {
+	width : 129,
+	height : 66,
+	backgroundImage : '/headers/tab.png',
+	backgroundSelectedImage : '/headers/tab_tap.png',
+	backgroundBaseImage : '/headers/tab.png'
+},
+".name": {
+    touchEnabled : false,
+    width : 129,
+    height : 66,
+    top : 0,
+    color : '#7c7c7c',
+    font : {
+        fontFamily : Alloy.CFG.ui_font,
+        fontSize : 14,
+        fontWeight : 'bold'
+    },
+    textAlign : 'center'
+}

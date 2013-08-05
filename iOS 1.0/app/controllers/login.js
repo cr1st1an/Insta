@@ -239,7 +239,7 @@ $.instagram.addEventListener('load', function(e) {
 				code : code
 			});
 		} else if (error_reason != e.source.url || -1 !== invalid.indexOf(url)) {
-			alert('Insta needs your authorization.');
+			$.login.requestLogin();
 		}
 	}
 });

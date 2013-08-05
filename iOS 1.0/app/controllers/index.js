@@ -15,6 +15,9 @@ Ti.App.addEventListener('instagram', function(e) {
 		case 'get_user':
 			Alloy.Globals.instagram.getUser(e.identifier);
 			break;
+		case 'get_media_search':
+			Alloy.Globals.instagram.getMediaSearch(e.lat, e.lng, Alloy.Globals.navigation.getMaxHACK());
+			break;
 		case 'get_media_popular':
 			Alloy.Globals.instagram.getMediaPopular();
 			break;
@@ -40,11 +43,14 @@ Ti.App.addEventListener('navigation', function(e) {
 			break;
 		case 'open_popular':
 			Alloy.Globals.ui.navbarSetRoot('explore');
-			Alloy.Globals.navigation.setRoot('popular', null, 'popular', null, 'thumb_a');
+			Alloy.Globals.navigation.setRoot('explore', 'explore', 'popular', null, 'thumb_a');
 			break;
 		case 'open_profile':
 			Alloy.Globals.ui.navbarSetRoot('profile');
 			Alloy.Globals.navigation.setRoot('profile', 'profile', 'profile', 'self', 'thumb_b');
+			break;
+		case 'open_page':
+			Alloy.Globals.navigation.setPage(e.title, e.header, e.source, e.identifier, e.thumb);
 			break;
 		case 'request_user_data':
 			Alloy.Globals.navigation.requestUserData();
@@ -117,19 +123,29 @@ Ti.App.addEventListener('ui', function(e) {
 		case 'main_new':
 			Alloy.Globals.ui.mainNew(e.header, e.thumbLayout);
 			break;
+		case 'main_new_container':
+			Alloy.Globals.ui.mainNewContainer(e.thumbLayout);
+			break;
+		case 'main_scroll_to_index':
+			Alloy.Globals.ui.mainScrollToIndex(e.index);
+			break;
 		case 'header_append_data':
 			if (Alloy.Globals.navigation.isResponseExpected(e.endpoint, e.identifier)) {
-				alert(JSON.stringify(e.data));
+				Alloy.Globals.ui.mainHeaderAppendData(e.data);
 			}
 			break;
 		case 'container_append_data':
 			if (Alloy.Globals.navigation.isResponseExpected(e.endpoint, e.identifier)) {
-				if (undefined === Alloy.Globals.navigation.setMaxId(e.pagination)) {
+				Alloy.Globals.ui.slideshowAppendData(e.data);
+				if (undefined === Alloy.Globals.navigation.setMax(e.pagination)) {
 					Alloy.Globals.ui.mainContainerAppendData(e.data, true);
 				} else {
 					Alloy.Globals.ui.mainContainerAppendData(e.data, false);
 				}
 			}
+			break;
+		case 'slideshow_open_slideshow':
+			Alloy.Globals.ui.slideshowOpenSlideshow(e.id);
 			break;
 	}
 });

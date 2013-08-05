@@ -1,0 +1,12 @@
+<Alloy>
+	<View class="header_explore">
+		<View class="menu">
+			<Button id="popular" left="0" class="tab" onSingletap="popularTap">
+				<Label id="popular_name" class="name">POPULAR</Label>
+			</Button>
+			<Button id="near" left="129" class="tab" onSingletap="nearTap">
+				<Label id="near_name" class="name">NEAR</Label>
+			</Button>
+		</View>
+	</View>
+</Alloy>

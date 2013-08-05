@@ -1,5 +1,4 @@
 ".thumb_a":{
-    touchEnabled : false,
 	width : 252,
 	height : 308,
 	top : 0,
@@ -21,7 +20,6 @@
 },
 ".username": {
     touchEnabled : false,
-    backgroundColor : '#fff',
     width : 185,
     height : 16,
 	top : 264,

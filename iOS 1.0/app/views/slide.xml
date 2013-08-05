@@ -1,0 +1,12 @@
+<Alloy>
+	<View class="slide">
+		<ImageView id="photo" class="photo" />
+		<ImageView class="photo_overlay" />
+		<View class="author">
+			<ImageView id="profile_picture" class="profile_picture" />
+			<Label id="username" class="username" />
+			<Label id="caption" class="caption" />
+			<Label id="time" class="time" />
+		</View>
+	</View>
+</Alloy>

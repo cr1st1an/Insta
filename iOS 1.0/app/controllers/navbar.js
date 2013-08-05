@@ -65,7 +65,5 @@ function profileTap() {
 };
 
 function prevTap() {
-	Ti.App.fireEvent('navigation', {
-		action : 'logout'
-	});
+	
 };

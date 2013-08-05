@@ -1,6 +1,7 @@
 ".main": {
-	scrollsToTop : false,
 	height : Ti.UI.FILL,
 	width : Ti.UI.FILL,
+	top : 44,
+	layout : 'vertical',
 	zIndex : 0
 }

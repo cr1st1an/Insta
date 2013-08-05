@@ -1,0 +1,5 @@
+<Alloy>
+	<View class="slideshow" onSwipe="swipeSlideshow">
+		<View onSingletap="backTap" class="back" />
+	</View>
+</Alloy>

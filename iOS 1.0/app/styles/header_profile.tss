@@ -1,14 +1,111 @@
 ".header_profile":{
-	width : Ti.UI.FILL,
-	height : 154,
-	top : 44,
-	left : 0
+	width : Ti.UI.SIZE,
+	height : Ti.UI.SIZE,
+	layout : 'horizontal'
 },
-".details":{
+".profile_picture":{
+    touchEnabled : false,
+	width : 64,
+	height : 64,
+	top : 12,
+	left : 12,
+	borderRadius : 6
+},
+".info": {
+    touchEnabled : false,
+    width : Ti.UI.FILL,
+    height : Ti.UI.SIZE,
+    left : 12,
+    right : 12,
+	layout : 'vertical'
+},
+".full_name": {
+    touchEnabled : false,
+    width : Ti.UI.FILL,
+    height : 16,
+	top : 12,
+    color : '#666666',
+    font : {
+        fontFamily : Alloy.CFG.ui_font,
+        fontSize : 14,
+        fontWeight : 'bold'
+    }
+},
+".bio": {
+    touchEnabled : false,
+    width : Ti.UI.FILL,
+    height : Ti.UI.SIZE,
+	top : 2,
+    color : '#666666',
+    font : {
+        fontFamily : Alloy.CFG.ui_font,
+        fontSize : 14
+    }
+},
+".website": {
+    touchEnabled : false,
+    width : Ti.UI.FILL,
+    height : Ti.UI.SIZE,
+	top : 2,
+    color : Alloy.CFG.ui_color,
+    font : {
+        fontFamily : Alloy.CFG.ui_font,
+        fontSize : 14,
+        fontWeight : 'bold'
+    }
+},
+".menu":{
 	width : Ti.UI.FILL,
 	height : 66,
-	bottom : 0,
+	top : 12,
 	left : 0,
 	backgroundImage : '/headers/back_details.png',
 	backgroundRepeat : true
+},
+".tab": {
+	width : 129,
+	height : 66,
+	backgroundImage : '/headers/tab.png',
+	backgroundSelectedImage : '/headers/tab_tap.png',
+	backgroundBaseImage : '/headers/tab_tap.png'
+},
+".tab_selected": {
+	touchEnabled : false,
+	width : 129,
+	height : 66,
+	image : '/headers/tab_tap.png'
+},
+".count": {
+    touchEnabled : false,
+    width : 129,
+    height : 26,
+	bottom : 28,
+    color : '#666666',
+    font : {
+        fontFamily : Alloy.CFG.ui_font,
+        fontSize : 24,
+        fontWeight : 100
+    },
+    textAlign : 'center'
+},
+".description": {
+    touchEnabled : false,
+    width : 129,
+    height : 14,
+	bottom : 12,
+    color : Alloy.CFG.ui_color,
+    font : {
+        fontFamily : Alloy.CFG.ui_font,
+        fontSize : 12,
+        fontWeight : 'bold'
+    },
+    textAlign : 'center'
+},
+".logout": {
+	width : 92,
+	height : 41,
+	right : 12,
+	bottom : 12,
+	backgroundImage : '/headers/logout.png',
+	backgroundSelectedImage : '/headers/logout_tap.png'
 }

@@ -1,0 +1,81 @@
+".slide": {
+    width : 612,
+    height : Ti.UI.SIZE,
+    backgroundColor : '#ffffff',
+    borderRadius : 3
+},
+".photo": {
+    width : 612,
+    height : 612,
+    top : 0,
+    defaultImage : '/slide/photo_default.png'
+},
+".photo_overlay": {
+    width : 612,
+    height : 612,
+    top : 0,
+    image : '/slide/photo_overlay.png'
+},
+".author": {
+	width : 612,
+	height : Ti.UI.SIZE,
+	top : 612,
+	backgroundColor : '#f7f7f7'
+},
+".profile_picture": {
+    touchEnabled : false,
+    width : 32,
+    height : 32,
+    top : 16,
+	bottom : 25,
+    left : 16
+},
+".username": {
+    width : 434,
+    height : 16,
+	top : 13,
+    left : 64,
+    color : Alloy.CFG.ui_color,
+    font : {
+        fontFamily : Alloy.CFG.ui_font,
+        fontSize : 14,
+        fontWeight : 'bold'
+    }
+},
+".caption": {
+    width : 484,
+    height : Ti.UI.SIZE,
+	top : 30,
+	bottom : 25,
+    left : 64,
+    color : '#7d7d7d',
+    font : {
+        fontFamily : Alloy.CFG.ui_font,
+        fontSize : 14
+    }
+},
+".time": {
+    width : 54,
+    height : 16,
+	top : 12,
+	bottom : 16,
+    right : 16,
+    color : '#7d7d7d',
+    font : {
+        fontFamily : Alloy.CFG.ui_font,
+        fontSize : 14
+    },
+    textAlign : 'right'
+},
+".border": {
+	width : 612,
+	height : 1,
+	bottom : 0,
+	backgroundColor : '#dbdbdb'
+},
+".comments": {
+	width : 612,
+	height : Ti.UI.SIZE,
+	top : 0,
+	bottom : 67
+}

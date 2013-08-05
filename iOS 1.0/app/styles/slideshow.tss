@@ -1,0 +1,13 @@
+".slideshow": {
+	touchEnabled : false,
+	opacity : 0,
+	width : Ti.UI.FILL,
+	height : Ti.UI.FILL,
+	zIndex : 15
+},
+".back": {
+	width : Ti.UI.FILL,
+	height : Ti.UI.FILL,
+	backgroundColor : '#000000',
+	opacity : 0.80
+}

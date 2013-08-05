@@ -1,5 +1,25 @@
 <Alloy>
 	<View class="header_profile">
-		<View class="details"></View>
+		<ImageView id="profile_picture" class="profile_picture" />
+		<View id="info" class="info">
+			<Label id="full_name" class="full_name" />
+			<Label id="bio" class="bio" />
+			<Label id="website" class="website" />
+		</View>
+		<View class="menu">
+			<ImageView left="0" class="tab_selected">
+				<Label id="photos" class="count" />
+				<Label class="description">PHOTOS</Label>
+			</ImageView>
+			<Button left="129" class="tab">
+				<Label id="following" class="count" />
+				<Label class="description">FOLLOWING</Label>
+			</Button>
+			<Button left="258" class="tab">
+				<Label id="followers" class="count" />
+				<Label class="description">FOLLOWERS</Label>
+			</Button>
+			<Button onSingletap="logoutTap" class="logout"/>
+		</View>
 	</View>
 </Alloy>

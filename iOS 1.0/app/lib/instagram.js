@@ -6,8 +6,8 @@ exports.getUser = function(idParam) {
 	var params = {};
 	if (undefined !== this.session['access_token'])
 		params['access_token'] = this.session['access_token'];
-	
-	httpGet('users/'+idParam, params, 'users', idParam);
+
+	httpGet('users/' + idParam, params, 'users', idParam);
 };
 
 exports.getUserMediaFeed = function(maxIdParam) {
@@ -17,7 +17,7 @@ exports.getUserMediaFeed = function(maxIdParam) {
 	if (undefined !== maxIdParam)
 		params['max_id'] = maxIdParam;
 	params['count'] = 50;
-	
+
 	httpGet('users/self/feed', params, 'users_self_feed', null);
 };
 
@@ -31,6 +31,18 @@ exports.getUserMediaRecent = function(idParam, maxIdParam) {
 
 	httpGet('users/' + idParam + '/media/recent', params, 'users_id_media_recent', idParam);
 };
+
+exports.getMediaSearch = function(latParam, lngParam, maxTimestampParam) {
+	var params = {};
+	if (undefined !== this.session['access_token'])
+		params['access_token'] = this.session['access_token'];
+	if (undefined !== maxTimestampParam)
+		params['max_timestamp'] = maxTimestampParam;
+	params['lat'] = latParam;
+	params['lng'] = lngParam;
+
+	httpGet('media/search', params, 'media_search', null);
+}
 
 exports.getMediaPopular = function() {
 	var params = {};
@@ -73,6 +85,11 @@ function httpGetHandler(pathParam, paramsParam, responseParam, endpointParam, id
 				data : responseParam['data']
 			});
 			break;
+		case 'media_search':
+			if (0 < responseParam['data'].length) {
+				responseParam['pagination'] = {};
+				responseParam['pagination']['max_timestamp'] = responseParam['data'][responseParam['data'].length-1]['created_time'];
+			}
 		case 'users_self_feed':
 		case 'users_id_media_recent':
 		case 'media_popular':
